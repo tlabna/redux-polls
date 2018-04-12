@@ -2,24 +2,30 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getPercentage } from '../utils/helpers'
+import { handleAddAnswer } from '../actions/answers'
 
 const getVoteKeys = () => ['aVotes', 'bVotes', 'cVotes', 'dVotes']
 
 class Poll extends Component {
   static propTypes = {
     poll: PropTypes.object.isRequired,
-    vote: PropTypes.object,
+    vote: PropTypes.string,
     authorAvatar: PropTypes.string.isRequired,
     authedUser: PropTypes.string.isRequired,
+    dispatch: PropTypes.func.isRequired,
   }
 
   handleAnswer = (answer) => {
-    const { poll, authedUser } = this.props
+    const { poll, authedUser, dispatch } = this.props
     this.answered = true
 
-    console.log('Add Answer:', answer)
-    console.log('Poll:', poll)
-    console.log('authedUser:', authedUser)
+    dispatch(
+      handleAddAnswer({
+        id: poll.id,
+        authedUser,
+        answer,
+      })
+    )
   }
 
   render() {
