@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
+import Dashboard from './Dashboard'
 
 class App extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
+    loading: PropTypes.bool.isRequired,
   }
   componentDidMount() {
     const { dispatch } = this.props
@@ -13,14 +15,16 @@ class App extends Component {
     dispatch(handleInitialData())
   }
   render() {
-    return <div>{'Starter Code.'}</div>
+    const { loading } = this.props
+
+    return <div>{loading === true ? 'Loading' : <Dashboard />}</div>
   }
 }
 
-const mapStateToProps = (state) => ({
-  users: state.users,
-  polls: state.polls,
-  authedUser: state.authedUser,
-})
+function mapStateToProps({ authedUser }) {
+  return {
+    loading: authedUser === null,
+  }
+}
 
 export default connect(mapStateToProps)(App)
