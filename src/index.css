@@ -1,18 +1,18 @@
 body {
+  color: #252525;
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  color: #252525;
 }
 
 a {
-  text-decoration: none;
   color: #252525;
+  text-decoration: none;
 }
 
 .container {
-  max-width: 1000px;
   margin: 0 auto;
+  max-width: 1000px;
   padding: 10px;
 }
 
@@ -21,9 +21,9 @@ a {
 }
 
 .option {
+  border-radius: 2px;
   border: 1px solid #d0d0d0;
   margin: 10px;
-  border-radius: 2px;
 }
 
 .option:hover {
@@ -41,41 +41,41 @@ a {
 }
 
 .poll-author {
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
   font-weight: bold;
+  justify-content: center;
   text-transform: uppercase;
 }
 
 .poll-author img {
-  width: 40px;
-  height: 40px;
   border-radius: 20px;
+  height: 40px;
   margin: 0 10px;
+  width: 40px;
 }
 
 .btn {
-  text-transform: uppercase;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.29);
+  cursor: pointer;
+  font-size: 16px;
   margin: 35px auto;
   padding: 10px;
-  border: 1px solid rgba(0,0,0,.29);
-  cursor: pointer;
-  background: #fff;
-  font-size: 16px;
-  width: 250px;
   position: relative;
+  text-transform: uppercase;
+  width: 250px;
 }
 
 .btn:hover {
-  border-color: rgba(0,0,0,.5);
+  border-color: rgba(0, 0, 0, 0.5);
   text-decoration: none;
 }
 
 .btn:focus {
-  outline: 0;
-  font-weight: 700;
   border-width: 2px;
+  font-weight: 700;
+  outline: 0;
 }
 
 .center {
@@ -108,21 +108,21 @@ li {
 }
 
 .dashboard-toggle {
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
   font-size: 22px;
+  justify-content: center;
 }
 
 .dashboard-toggle button {
-  border: none;
   background: transparent;
+  border: none;
   font-size: 22px;
 }
 
 .dashboard-list {
   font-size: 18px;
-  letter-spacing: .4px;
+  letter-spacing: 0.4px;
 }
 
 .dashboard-list a:hover {
@@ -130,16 +130,16 @@ li {
 }
 
 .add-poll-container {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .poll-container {
-  width: 60%;
-  margin: 0px auto;
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+  width: 60%;
 }
 
 .question {
@@ -148,10 +148,10 @@ li {
 }
 
 .avatar {
-  width: 40px;
-  height: 40px;
   border-radius: 20px;
+  height: 40px;
   margin-top: 10px;
+  width: 40px;
 }
 
 .user {
@@ -159,26 +159,26 @@ li {
 }
 
 .user h1 {
-  margin: 0;
   font-size: 30px;
+  margin: 0;
 }
 
 .user img {
-  width: 40px;
-  height: 40px;
   border-radius: 20px;
+  height: 40px;
   margin-right: 20px;
+  width: 40px;
 }
 
 .user p {
-  margin-top: 6px;
   margin-bottom: 6px;
+  margin-top: 6px;
 }
 
 @media (max-width: 500px) {
   .poll-container {
-    width: 95%;
     flex-direction: column;
+    width: 95%;
   }
 }
 
@@ -188,41 +188,41 @@ li {
 }
 
 input {
-  display: block;
-  box-sizing: border-box;
-  width: 100%;
-  outline: none;
-  border: none;
-  border-radius: 0;
   appearance: none;
+  border-radius: 0;
+  border: none;
+  box-sizing: border-box;
+  display: block;
   margin-bottom: 20px;
+  outline: none;
+  width: 100%;
 }
 
 .btn {
-  text-transform: uppercase;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.29);
+  cursor: pointer;
+  font-size: 16px;
   margin: 35px auto;
   padding: 10px;
-  border: 1px solid rgba(0,0,0,.29);
-  cursor: pointer;
-  background: #fff;
-  font-size: 16px;
-  width: 250px;
   position: relative;
+  text-transform: uppercase;
+  width: 250px;
 }
 
 .label {
   display: block;
-  margin-bottom: 0.25em;
   font-size: 20px;
+  margin-bottom: 0.25em;
 }
 
 .input {
-  padding: 5px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: lightgray;
   background-color: white;
+  border-color: lightgray;
+  border-style: solid;
+  border-width: 1px;
   font-size: 18px;
+  padding: 5px;
 }
 .input:focus {
   border-color: gray;
