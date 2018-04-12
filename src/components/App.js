@@ -25,7 +25,7 @@ class App extends Component {
       <div>
         <LoadingBar />
         {!loading && (
-          <Poll match={{ params: { id: 'loxhs1bqm25b708cmbf3g' } }} />
+          <Poll match={{ params: { id: 'xj352vofupe1dqz9emx13r' } }} />
         )}
       </div>
     )
