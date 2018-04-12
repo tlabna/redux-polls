@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
 import Dashboard from './Dashboard'
+import LoadingBar from 'react-redux-loading'
 
 class App extends Component {
   static propTypes = {
@@ -17,7 +18,12 @@ class App extends Component {
   render() {
     const { loading } = this.props
 
-    return <div>{loading === true ? 'Loading' : <Dashboard />}</div>
+    return (
+      <div>
+        <LoadingBar />
+        {!loading && <Dashboard />}
+      </div>
+    )
   }
 }
 
