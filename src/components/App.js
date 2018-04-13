@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { handleInitialData } from '../actions/shared'
 import Dashboard from './Dashboard'
@@ -7,6 +8,7 @@ import LoadingBar from 'react-redux-loading'
 import Leaderboard from './Leaderboard'
 import AddPoll from './AddPoll'
 import Poll from './Poll'
+import Nav from './Nav'
 
 class App extends Component {
   static propTypes = {
@@ -22,12 +24,22 @@ class App extends Component {
     const { loading } = this.props
 
     return (
-      <div>
-        <LoadingBar />
-        {!loading && (
-          <Poll match={{ params: { id: 'xj352vofupe1dqz9emx13r' } }} />
-        )}
-      </div>
+      <Router>
+        <Fragment>
+          <LoadingBar />
+          <div className="container">
+            <Nav />
+            {!loading && (
+              <div>
+                <Route path="/" exact={true} component={Dashboard} />
+                <Route path="/leaderboard" component={Leaderboard} />
+                <Route path="/polls/:id" component={Poll} />
+                <Route path="/add" component={AddPoll} />
+              </div>
+            )}
+          </div>
+        </Fragment>
+      </Router>
     )
   }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 class Dashboard extends Component {
   static propTypes = {
@@ -50,7 +51,11 @@ class Dashboard extends Component {
           </button>
         </div>
         <ul className="dashboard-list">
-          {list.map((poll) => <li key={poll.id}>{poll.question}</li>)}
+          {list.map((poll) => (
+            <li key={poll.id}>
+              <Link to={`polls/${poll.id}`}>{poll.question}</Link>
+            </li>
+          ))}
         </ul>
       </div>
     )

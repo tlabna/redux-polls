@@ -6,6 +6,7 @@ import { handleAddPoll } from '../actions/polls'
 class AddPoll extends Component {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
+    history: PropTypes.object.isRequired,
   }
 
   state = {
@@ -19,6 +20,7 @@ class AddPoll extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
     // Will be a redirect to /
+    this.props.history.push('/')
     this.props.dispatch(handleAddPoll(this.state))
   }
 
